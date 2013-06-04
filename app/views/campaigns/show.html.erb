@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <b>Office:</b>
@@ -47,9 +46,11 @@
 
 <p>
   <b>User:</b>
-  <%= @campaign.user %>
+  <%= @campaign.user_id %>
 </p>
 
-
-<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<% if @campaign.user_id.to_i == session[:user_id] %>
+  <%= link_to 'Edit', edit_campaign_path(@campaign) %> | 
+<% end %>
 <%= link_to 'Back', campaigns_path %>
+
