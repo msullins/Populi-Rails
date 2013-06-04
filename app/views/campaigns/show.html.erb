@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Office:</b>
+  <%= @campaign.office %>
+</p>
+
+<p>
+  <b>Locality type:</b>
+  <%= @campaign.locality_type %>
+</p>
+
+<p>
+  <b>Locality:</b>
+  <%= @campaign.locality %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @campaign.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @campaign.zip %>
+</p>
+
+<p>
+  <b>Goal:</b>
+  <%= @campaign.goal %>
+</p>
+
+<p>
+  <b>Funded:</b>
+  <%= @campaign.funded %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%= @campaign.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @campaign.end %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @campaign.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<%= link_to 'Back', campaigns_path %>

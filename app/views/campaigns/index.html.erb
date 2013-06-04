@@ -1,0 +1,41 @@
+<h1>Listing campaigns</h1>
+
+<table>
+  <tr>
+    <th>Office</th>
+    <th>Locality type</th>
+    <th>Locality</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Goal</th>
+    <th>Funded</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @campaigns.each do |campaign| %>
+  <tr>
+    <td><%= campaign.office %></td>
+    <td><%= campaign.locality_type %></td>
+    <td><%= campaign.locality %></td>
+    <td><%= campaign.state %></td>
+    <td><%= campaign.zip %></td>
+    <td><%= campaign.goal %></td>
+    <td><%= campaign.funded %></td>
+    <td><%= campaign.start %></td>
+    <td><%= campaign.end %></td>
+    <td><%= campaign.user %></td>
+    <td><%= link_to 'Show', campaign %></td>
+    <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
+    <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Campaign', new_campaign_path %>

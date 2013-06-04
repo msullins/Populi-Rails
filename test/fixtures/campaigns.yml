@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  office: MyString
+  locality_type: MyString
+  locality: MyString
+  state: MyString
+  zip: 1
+  goal: 
+  funded: 
+  start: 
+  end: 
+  user: 
+
+two:
+  office: MyString
+  locality_type: MyString
+  locality: MyString
+  state: MyString
+  zip: 1
+  goal: 
+  funded: 
+  start: 
+  end: 
+  user: 
