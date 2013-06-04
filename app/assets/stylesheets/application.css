@@ -59,3 +59,6 @@ body ul{
 		font-weight:bold;
 		font-size:60px;
 	}
+.thumbnail {
+	border:1px solid black;
+}

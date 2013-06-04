@@ -14,7 +14,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1.json
   def show
     @campaign = Campaign.find(params[:id])
-
+    @my_campaigns = Campaign.where("user_id", session[:user_id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @campaign }
@@ -41,6 +41,7 @@ class CampaignsController < ApplicationController
   # POST /campaigns.json
   def create
     @campaign = Campaign.new(params[:campaign])
+    @campaign.user_id = session[:user_id]
 
     respond_to do |format|
       if @campaign.save
