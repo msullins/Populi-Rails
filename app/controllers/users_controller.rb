@@ -29,7 +29,11 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    if (params[:id].to_i == session[:user_id].to_i)
+      @user = User.find(params[:id])
+    else
+      redirect_to "/users/#{params[:id]}", notice: "You may not modify another user's profile"
+    end
   end
 
   # POST /users

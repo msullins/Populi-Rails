@@ -3,7 +3,6 @@ class CampaignsController < ApplicationController
   # GET /campaigns.json
   def index
     @campaigns = Campaign.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @campaigns }
@@ -14,7 +13,6 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1.json
   def show
     @campaign = Campaign.find(params[:id])
-    @my_campaigns = Campaign.where("user_id", session[:user_id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @campaign }
@@ -80,5 +78,9 @@ class CampaignsController < ApplicationController
       format.html { redirect_to campaigns_url }
       format.json { head :no_content }
     end
+  end
+
+  def mine
+    @my_campaigns = Campaign.where("user_id", session[:user_id])
   end
 end

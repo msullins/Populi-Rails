@@ -3,12 +3,13 @@
 				<ul class="menu_bar" id="navbar">
 					<li><a href="/">Home</a></li>
 					<li>What is Populi?</li>
-					<li>Browse Candidates</li>
+					<li><a href="/campaigns/">Browse Candidates</a></li>
 					<li><a href="http://vox.p.opu.li">Blog</a>
-					<li><a href="/campaign/">Campaign Control Panel</a></li>
+					<li><a href="/campaigns/mine">Campaign Control Panel</a></li>
 					  <% if current_user %>
 					    <li>Logged in as <%= current_user.email %>.</li>
 					    <li><%= link_to "Log out", log_out_path %></li>
+					    <li><a href="http:/users/<%= session[:user_id] %>"> My Profile </a></li>
 					  <% else %>
 					    <li><%= link_to "Sign up", sign_up_path %> or</li>
 					    <li><%= link_to "log in", log_in_path %></li>
