@@ -41,6 +41,7 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(params[:campaign])
     @campaign.user_id = session[:user_id]
+    @campaign.funded = 0
 
     respond_to do |format|
       if @campaign.save

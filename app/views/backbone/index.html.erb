@@ -6,78 +6,29 @@
 				<button type="button">Learn More!</button><br />
 			</div>
 			<h2 id="near_you">Candidates Near You</h2>
-			<div class="thumbnail">
-				<%= image_tag "candidate.jpg" %>
-				<h2>Alfred E. Neuman</h2>
-				<p>A paragraph or so of blurb stuff.</p>
-				<p>California 3rd Congressional District</p>
-				<table>
-					<thead>
-						<th>funded</th>
-						<th>pledged</th>
-						<th>Days to go</th>
-					</thead>
-					<tbody>
-						<td>10% funded</td>
-						<td>$50 pledged</td>
-						<td>14 days to go</td>
-					</tbody>
-				</table>
-			</div>
-			<div class="thumbnail">
-				<%= image_tag "http://img.ezinemark.com/imagemanager2/files/30004254/2011/01/2011-01-10-10-06-22-1-the-most-prominent-politician-who-can-replace-robe.jpeg" %>
-				<h2>John Hefflefinger</h2>
-				<p>A paragraph or so of blurb stuff.</p>
-				<p>California 3rd Congressional District</p>
-				<table>
-					<thead>
-						<th>funded</th>
-						<th>pledged</th>
-						<th>Days to go</th>
-					</thead>
-					<tbody>
-						<td>10% funded</td>
-						<td>$50 pledged</td>
-						<td>14 days to go</td>
-					</tbody>
-				</table>
-			</div>
-			<div class="thumbnail">
-				<%= image_tag "http://upload.wikimedia.org/wikipedia/commons/b/b7/John_Hancock_Texas_politician_-_Brady-Handy.jpg" %>
-				<h2>Tom McGillacutty</h2>
-				<p>A paragraph or so of blurb stuff.</p>
-				<p>California 3rd Congressional District</p>
-				<table>
-					<thead>
-						<th>funded</th>
-						<th>pledged</th>
-						<th>Days to go</th>
-					</thead>
-					<tbody>
-						<td>10% funded</td>
-						<td>$50 pledged</td>
-						<td>14 days to go</td>
-					</tbody>
-				</table>
-			</div>	
-			<div class="thumbnail">
-				<%= image_tag "http://www.johnlennon.com/wp-content/themes/jl/images/home-gallery/2.jpg" %>
-				<h2>John Lenon</h2>
-				<p>A paragraph or so of blurb stuff.</p>
-				<p>California 3rd Congressional District</p>
-				<table>
-					<thead>
-						<th>Funded</th>
-						<th>Pledged</th>
-						<th>Days to go</th>
-					</thead>
-					<tbody>
-						<td>5200% funded</td>
-						<td>$5 million pledged</td>
-						<td>2 days to go</td>
-					</tbody>
-				</table>
-			</div>
+			<% for i in 1..4 
+				@campaign = Campaign.find(rand(1..@last_camp.id))%>
+				<div class="thumbnail">
+			        <% @candidate = User.find( @campaign.user_id) %>
+			        <%= image_tag @candidate.photo %>
+			        <h2><%= @candidate.first_name %> <%= @candidate.last_name %></h2>
+			        <%= @campaign.state %> <%= @campaign.locality_type %> <%= @campaign.locality %><br />
+			        <%= @campaign.office %>
+			        <table>
+			            <thead>
+			                <th>Goal:</th>
+			                <th>Pledged:</th>
+			                <th>End date</th>
+			            </thead>
+			            <tbody>
+			                <td><%= @campaign.goal %></td>
+			                <td><%= @campaign.funded %></td>
+			                <td><%= @campaign.end %></td>
+			            </tbody>
+			        </table>
+			        <%= link_to 'Show More', @campaign %>
+			    </div>
+			<% end %>
 			<div id="footer">
 				<h2>Where candidates come from</h2>
 				Candidates are people like you who want a chance to serve the public good. They may be a member of any political party or none.
