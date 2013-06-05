@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 2.3.1.3'
 gem "bcrypt-ruby", :require => "bcrypt"
+gem "paperclip", "~> 3.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

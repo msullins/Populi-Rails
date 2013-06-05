@@ -8,8 +8,8 @@
     <%= f.input :state %>
     <%= f.input :zip %>
     <%= f.input :goal %>
-    <%= f.input :start %>
-    <%= f.input :end %>
+    Start Date<br /><%= f.date_select :start %>
+    <br />End Date<br /><%= f.date_select :end %>
   </div>
 
   <div class="form-actions">

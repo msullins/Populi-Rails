@@ -59,5 +59,28 @@ body ul{
 		font-size:60px;
 	}
 .thumbnail {
-	border:1px solid black;
+	width: 300px;
+	margin: 25px;
+	float: left;
+	background-color:white;
+	border: 1px solid black;
 }
+	.thumbnail h2{
+		text-decoration:underline;
+	}
+	.thumbnail img{
+		width:300px;
+		height:400px;
+	}
+	.thumbnail table {
+		background-color: grey;
+	}
+	.thumbnail table th{
+		padding: 0px 20px;
+	}
+	.thumbnail table td{
+		padding: 0px 20px;
+	}
+	.thumbnail h2{
+		text-align:center;
+	}

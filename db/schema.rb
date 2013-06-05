@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603230044) do
+ActiveRecord::Schema.define(:version => 20130604234802) do
 
   create_table "campaigns", :force => true do |t|
     t.string   "office"
@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(:version => 20130603230044) do
     t.integer  "zip"
     t.float    "goal"
     t.float    "funded"
-    t.string   "start"
-    t.string   "end"
     t.integer  "user_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.datetime "start"
+    t.datetime "end"
   end
 
   add_index "campaigns", ["user_id"], :name => "index_campaigns_on_user_id"
@@ -39,11 +39,15 @@ ActiveRecord::Schema.define(:version => 20130603230044) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "password_salt"
     t.string   "password_hash"
     t.string   "email"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

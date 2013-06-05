@@ -13,6 +13,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1.json
   def show
     @campaign = Campaign.find(params[:id])
+    @candidate = User.find(@campaign.user_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @campaign }

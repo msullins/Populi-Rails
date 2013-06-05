@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :address, :password, :email, :password_confirmation, :address2, :city, :credit_card, :expiration, :first_name, :last_name, :security_code, :state, :username, :zip
+  attr_accessible :photo, :address, :password, :email, :password_confirmation, :address2, :city, :credit_card, :expiration, :first_name, :last_name, :security_code, :state, :username, :zip
+
+  has_attached_file :photo
 
   attr_accessor :password
   before_save :encrypt_password
