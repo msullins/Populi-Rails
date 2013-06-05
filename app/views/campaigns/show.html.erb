@@ -1,59 +1,32 @@
-<%= image_tag @candidate.photo %>
-<p>
-    <b>Candidate:</b>
-    <%= @candidate.first_name %> <%= @candidate.last_name %>
-<p>
-  <b>Office:</b>
-  <%= @campaign.office %>
-</p>
-
-<p>
-  <b>Locality type:</b>
-  <%= @campaign.locality_type %>
-</p>
-
-<p>
-  <b>Locality:</b>
-  <%= @campaign.locality %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @campaign.state %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%= @campaign.zip %>
-</p>
-
-<p>
-  <b>Goal:</b>
-  <%= @campaign.goal %>
-</p>
-
-<p>
-  <b>Funded:</b>
-  <%= @campaign.funded %>
-</p>
-
-<p>
-  <b>Start:</b>
-  <%= @campaign.start %>
-</p>
-
-<p>
-  <b>End:</b>
-  <%= @campaign.end %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @campaign.user_id %>
-</p>
-
 <% if @campaign.user_id.to_i == session[:user_id] %>
   <%= link_to 'Edit', edit_campaign_path(@campaign) %> | 
 <% end %>
-<%= link_to 'Back', campaigns_path %>
+<%= link_to 'Back', campaigns_path %><br />
+
+<div class="thumbnail">
+              <%= image_tag @candidate.photo %>
+              <h2><%= @candidate.first_name %> <%= @candidate.last_name %></h2>
+              <%= @campaign.state %> <%= @campaign.locality_type %> <%= @campaign.locality %><br />
+              <%= @campaign.office %>
+              <table>
+                  <thead>
+                      <th>Goal:</th>
+                      <th>Pledged:</th>
+                      <th>End date</th>
+                  </thead>
+                  <tbody>
+                      <td><%= @campaign.goal %></td>
+                      <td><%= @campaign.funded %></td>
+                      <td><%= @campaign.end %></td>
+                  </tbody>
+              </table>
+              <%= link_to 'Show More', @campaign %>
+              <% if current_user %>
+                <%= form_tag do %>
+                  <%= label_tag(:donate, "Donate to this campaign: ") %>
+                  <%= number_field( params[:donate], "donation", :step => 0.01) %>
+                  <%= submit_tag("Donate") %>
+                <% end %>
+              <% end %>
+          </div>
 

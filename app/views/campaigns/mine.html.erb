@@ -1,27 +1,31 @@
 
-<h2>Your campaigns</h2>
+<% if current_user %>
+    <h2>Your campaigns</h2>
 
-<h3><%= link_to 'New Campaign', new_campaign_path %></h3>
+    <h3><%= link_to 'New Campaign', new_campaign_path %></h3>
+    <% @my_campaigns.each do |my_campaign| %>
+        <div class="thumbnail">
+          <ul>
+            <li>Office: <%= my_campaign.office %></li>
+            <li>Locality Type: <%= my_campaign.locality_type %></li>
+            <li>Locality: <%= my_campaign.locality %></li>
+            <li>State: <%= my_campaign.state %></li>
+            <li>Zip: <%= my_campaign.zip %></li>
+            <li>Goal: <%= my_campaign.goal %></li>
+            <li>Current Funding: <%= my_campaign.funded %></li>
+            <li>Start: <%= my_campaign.start %></li>
+            <li>End: <%= my_campaign.end %></li>
+            <li><%= link_to 'Show', my_campaign %></li>
+            <li><%= link_to 'Edit', edit_campaign_path(my_campaign) %></li>
+            <li><%= link_to 'Destroy', my_campaign, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+        </div>
+    <% end %>
+    </table>
+<% else %>
+    Please <%= link_to "Sign up", sign_up_path %> or <%= link_to "log in", log_in_path %> to continue
 
-<% @my_campaigns.each do |my_campaign| %>
-    <div class="thumbnail">
-      <ul>
-        <li>Office: <%= my_campaign.office %></li>
-        <li>Locality Type: <%= my_campaign.locality_type %></li>
-        <li>Locality: <%= my_campaign.locality %></li>
-        <li>State: <%= my_campaign.state %></li>
-        <li>Zip: <%= my_campaign.zip %></li>
-        <li>Goal: <%= my_campaign.goal %></li>
-        <li>Current Funding: <%= my_campaign.funded %></li>
-        <li>Start: <%= my_campaign.start %></li>
-        <li>End: <%= my_campaign.end %></li>
-        <li><%= link_to 'Show', my_campaign %></li>
-        <li><%= link_to 'Edit', edit_campaign_path(my_campaign) %></li>
-        <li><%= link_to 'Destroy', my_campaign, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      </ul>
-    </div>
 <% end %>
-</table>
 
 
 <br />

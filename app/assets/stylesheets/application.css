@@ -62,8 +62,8 @@ body ul{
 	width: 300px;
 	margin: 25px;
 	float: left;
-	background-color:white;
 	border: 1px solid black;
+	background-color:#DDDDDD;
 }
 	.thumbnail h2{
 		text-decoration:underline;
@@ -73,13 +73,14 @@ body ul{
 		height:400px;
 	}
 	.thumbnail table {
-		background-color: grey;
+		margin-left:auto;
+		margin-right:auto;
 	}
 	.thumbnail table th{
-		padding: 0px 20px;
+		padding: 0px 10px;
 	}
 	.thumbnail table td{
-		padding: 0px 20px;
+		padding: 0px 10px;
 	}
 	.thumbnail h2{
 		text-align:center;

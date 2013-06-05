@@ -20,6 +20,13 @@ class CampaignsController < ApplicationController
     end
   end
 
+  def donate
+    @campaign = Campaign.find(params[:id])
+    @campaign.funded=@campaign.funded+params[:donation].to_f
+    @campaign.save
+    redirect_to "/campaigns/#{@campaign.id}"
+  end
+
   # GET /campaigns/new
   # GET /campaigns/new.json
   def new
@@ -83,6 +90,6 @@ class CampaignsController < ApplicationController
   end
 
   def mine
-    @my_campaigns = Campaign.where("user_id", session[:user_id])
+    @my_campaigns = Campaign.where("user_id = ?", session[:user_id])
   end
 end
