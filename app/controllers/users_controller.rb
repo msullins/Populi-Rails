@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    if session[:user_id]
+      @my_profile=User.find(session[:user_id]) 
+    end 
 
     respond_to do |format|
       format.html # index.html.erb

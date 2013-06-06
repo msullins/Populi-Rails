@@ -14,20 +14,26 @@
 		font-weight:bold;
 	}
 
-#splash {
+.splash {
 	border: 1px solid red;
+	background-color: #DDDDDD;
+	border-radius:10px;
 	margin-top:20px;
 	font-size:30px;
 	padding-bottom:40px;
 	text-align: center;
-	width: 600px;
+	width: 700px;
 	margin-left: auto;
 	margin-right:auto;
 	text-shadow: 1px 1px #BBBBBB;
 }
-	#splash button{
+	.splash button{
 		padding: 10px;
 		font-size: 20px;
 		background-color: blue;
 		float:right;
 	}
+
+.splash p {
+	font-size: 24px;
+}

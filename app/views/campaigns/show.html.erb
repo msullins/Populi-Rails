@@ -20,7 +20,6 @@
                       <td><%= @campaign.end %></td>
                   </tbody>
               </table>
-              <%= link_to 'Show More', @campaign %>
               <% if current_user %>
                 <%= form_tag do %>
                   <%= label_tag(:donate, "Donate to this campaign: ") %>

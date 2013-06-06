@@ -19,6 +19,13 @@
 body ul{
 	list-style:none;
 }
+button{
+	padding: 10px;
+	font-size: 20px;
+	background-color: blue;
+	float:right;
+	border-radius:10px;
+	}
 .menu_bar {	
 	padding-top:0px;
 	padding-left: 0px;
@@ -43,7 +50,7 @@ body ul{
 	}
 
 #head_bar {
-	padding-top: 32px;
+	padding-top: 35px;
 	padding-bottom: 45px;
 	margin-left:auto;
 	margin-right:auto;
@@ -67,6 +74,7 @@ body ul{
 }
 	.thumbnail h2{
 		text-decoration:underline;
+		text-align:center;
 	}
 	.thumbnail img{
 		width:300px;
@@ -82,6 +90,6 @@ body ul{
 	.thumbnail table td{
 		padding: 0px 10px;
 	}
-	.thumbnail h2{
-		text-align:center;
+	.thumbnail a {
+		text-decoration:none;
 	}

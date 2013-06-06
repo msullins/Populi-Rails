@@ -1,12 +1,12 @@
-<div id="splash">
-			<p>Take back the political process. <br />
-			Fund your own grassroots campaign.</p>
-			<p>Donate or volunteer to <br />
+<div class="splash">
+			<p>Take back the political process. </p>
+			<p>Get funding for your own grassroots campaign.</p>
+			<p>Donate or volunteer to 
 			campaigns you can believe in.</p>
 				<button type="button">Learn More!</button><br />
 			</div>
 			<h2 id="near_you">Candidates Near Mountain View CA</h2>
-			<% for i in 1..4 
+			<% for i in 0..3 
 				@campaign = Campaign.find(@random_campaigns[i])%>
 				<div class="thumbnail">
 			        <% @candidate = User.find( @campaign.user_id) %>
@@ -26,7 +26,7 @@
 			                <td><%= @campaign.end %></td>
 			            </tbody>
 			        </table>
-			        <%= link_to 'Show More', @campaign %>
+			        <button type="button"><%= link_to 'Show More', @campaign %></button>
 			    </div>
 			<% end %>
 			<div id="footer">
