@@ -5,6 +5,7 @@ Populi::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   post "campaigns/:id" => "campaigns#donate"
   match "campaigns/mine" => "campaigns#mine"
+  get "about" => "backbone#about"
   root to: 'backbone#index'
   resources :backbone
   resources :campaigns
